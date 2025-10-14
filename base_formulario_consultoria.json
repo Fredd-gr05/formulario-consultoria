@@ -1,0 +1,161 @@
+{
+    "categorias": [
+      {
+        "id": "perfil_empresa",
+        "titulo": "Perfil da Empresa",
+        "campos": [
+          {
+            "id": "nome_empresa",
+            "label": "Nome da empresa",
+            "tipo": "text",
+            "obrigatorio": true
+          },
+          {
+            "id": "segmento",
+            "label": "Segmento",
+            "tipo": "select",
+            "opcoes": ["industria", "varejo", "distribuicao", "servicos", "outros"],
+            "obrigatorio": true
+          }
+          // ...demais campos do perfil...
+        ]
+      },
+      {
+        "id": "situacao_atual",
+        "titulo": "Situação Atual – Análise Inteligente",
+        "campos": [
+          {
+            "id": "usa_bi",
+            "label": "Já utiliza Business Intelligence?",
+            "tipo": "radio",
+            "opcoes": ["sim", "não"],
+            "obrigatorio": true
+          },
+          {
+            "id": "bi_tecnologias",
+            "label": "Quais tecnologias são utilizadas?",
+            "tipo": "checkbox",
+            "opcoes": ["Power BI", "Tableau", "Qlik", "Excel", "Outras"],
+            "obrigatorio": false,
+            "condicao": {"campo": "usa_bi", "valor": "sim"}
+          }
+          // ...outros campos conforme necessidade...
+        ]
+      },
+      {
+        "id": "dificuldades",
+        "titulo": "Principais Dificuldades Enfrentadas",
+        "campos": [
+          {
+            "id": "dificuldades_lista",
+            "label": "Selecione as dificuldades",
+            "tipo": "checkbox",
+            "opcoes": [
+              "qualidade_dados", "falta_tempo", "baixo_conhecimento_bi", 
+              "resistencia_mudanca", "dificuldade_integração", "outros"
+            ],
+            "obrigatorio": true
+          },
+          {
+            "id": "dificuldades_outros",
+            "label": "Descreva outras dificuldades",
+            "tipo": "textarea",
+            "obrigatorio": true,
+            "condicao": {"campo": "dificuldades_lista", "valor": "outros"}
+          }
+        ]
+      },
+      {
+        "id": "objetivos_bi",
+        "titulo": "Objetivos com Business Intelligence",
+        "campos": [
+          {
+            "id": "objetivos",
+            "label": "O que você espera alcançar ao implementar uma solução de Business Intelligence?",
+            "tipo": "checkbox",
+            "opcoes": [
+              "aumentar_vendas", "reduzir_custos", "otimizar_processos",
+              "melhorar_decisao", "novas_oportunidades", "acompanhar_kpis",
+              "satisfacao_cliente", "dados_tempo_real", "outros"
+            ],
+            "obrigatorio": true
+          },
+          {
+            "id": "objetivos_outros",
+            "label": "Por favor, especifique outros objetivos",
+            "tipo": "textarea",
+            "obrigatorio": true,
+            "condicao": {"campo": "objetivos", "valor": "outros"}
+          }
+        ]
+      },
+      {
+        "id": "expectativas_passos",
+        "titulo": "Expectativas e Próximos Passos",
+        "campos": [
+          {
+            "id": "frequencia_relatorios",
+            "label": "Com que frequência você precisa de relatórios?",
+            "tipo": "select",
+            "opcoes": ["diario", "semanal", "quinzenal", "mensal", "trimestral", "anual", "sob_demanda"],
+            "obrigatorio": true
+          },
+          {
+            "id": "prazo_implementacao",
+            "label": "Qual o prazo ideal para iniciar a implementação?",
+            "tipo": "select",
+            "opcoes": ["imediato", "curto_prazo", "medio_prazo", "longo_prazo", "sem_prazo"],
+            "obrigatorio": true
+          },
+          {
+            "id": "decisor_principal",
+            "label": "Quem é o principal decisor para esta solução?",
+            "tipo": "select",
+            "opcoes": ["diretor_ceo", "gerente", "proprietario", "equipe_ti", "consultor_externo", "outros"],
+            "obrigatorio": true
+          },
+          {
+            "id": "motivacoes_segmento",
+            "label": "Motivações para implementar BI",
+            "tipo": "checkbox",
+            "opcoes": {
+              "industria": [
+                "otimizar_producao", "controle_qualidade", "prever_demanda_mp", "monitorar_oee",
+                "reduzir_custos_op", "cadeia_suprimentos", "decisoes_producao", "identificar_gargalos",
+                "performance_entregas", "rentabilidade_produto", "outras"
+              ],
+              "varejo": [
+                "comportamento_cliente", "otimizar_mix", "gerenciar_estoque", "analisar_vendas",
+                "personalizar_ofertas", "melhorar_experiencia", "reduzir_perdas", "prever_tendencias",
+                "otimizar_precificacao", "aumentar_fidelidade", "outras"
+              ],
+              "distribuicao": [
+                "otimizar_rotas", "gestao_estoque_armazem", "reduzir_custos_frete", "monitorar_fornecedores",
+                "prever_demandas", "eficiencia_vendas", "reduzir_ciclo_pedido", "identificar_giro",
+                "satisfacao_cliente", "expandir_estrategicamente", "outras"
+              ],
+              "servicos": [
+                "otimizar_alocacao", "rentabilidade_projeto", "satisfacao_retencao", "servicos_lucrativos",
+                "produtividade_equipe", "prever_demanda", "reduzir_custos", "ciclo_cliente",
+                "precificacao", "expandir_oferta", "outras"
+              ],
+              "default": [
+                "visao_360", "decisoes_dados", "oportunidades", "otimizar_processos",
+                "reduzir_custos", "eficiencia_equipe", "gestao_financeira", "acompanhar_kpis",
+                "automatizar_relatorios", "outras"
+              ]
+            },
+            "obrigatorio": true
+          },
+          {
+            "id": "motivacoes_outras_detalhe",
+            "label": "Detalhe outras motivações",
+            "tipo": "textarea",
+            "obrigatorio": true,
+            "condicao": {"campo": "motivacoes_segmento", "valor": "outras"}
+          }
+        ]
+      }
+    ]
+  }
+  

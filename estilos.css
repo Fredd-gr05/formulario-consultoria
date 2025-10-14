@@ -1,0 +1,235 @@
+/* === RESET E BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #2c3e50;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff; /* Card branco */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* === HEADER === */
+h1 {
+  color: #2c3e50;
+  font-size: 2em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subtitulo {
+  color: #7f8c8d;
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  border-left: 4px solid #3498db; /* azul principal */
+}
+
+/* === BARRA DE PROGRESSO === */
+.progress-container {
+  margin: 30px 0;
+}
+
+.progress {
+  background: #ecf0f1;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #3498db 0%, #2ecc71 100%);
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  box-shadow: 0 2px 4px rgba(52,152,219,0.3);
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #3498db;
+  font-size: 0.95em;
+}
+
+/* === SEÇÕES === */
+.section {
+  background: #f8f9fa;
+  padding: 30px;
+  margin: 25px 0;
+  border-radius: 10px;
+  border-left: 5px solid #3498db; /* azul principal */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.section h3 {
+  color: #2c3e50;
+  margin: 0 0 25px 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.section h3 span {
+  margin-right: 12px;
+  font-size: 1.3em;
+}
+
+/* === CHECKBOX GRID === */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid #ecf0f1; /* cinza claro */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.checkbox-item:hover, .checkbox-item.checked {
+  border-color: #3498db; /* azul principal */
+  box-shadow: 0 2px 8px rgba(52,152,219,0.2);
+  background: #ebf5fd;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkbox-label {
+  font-size: 0.95em;
+  color: #2c3e50;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* === CAMPOS E PERGUNTAS === */
+label {
+  display: block;
+  margin: 15px 0 8px 0;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95em;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ddd; /* borda inputs */
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* === BOTÃO PADRÃO === */
+button,
+input[type="submit"] {
+  background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s, background 0.3s;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+}
+
+button:hover,
+input[type="submit"]:hover {
+  filter: brightness(0.95);
+  background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
+}
+
+/* === MENSAGENS: padronização Discovery Detectabi === */
+.dica, .sucesso {
+  background: #eafaf1;
+  border-left: 4px solid #27ae60;  /* verde sucesso */
+  color: #27ae60;
+  margin: 15px 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+}
+
+.info {
+  background: #eaf5fb;
+  border-left: 4px solid #3498db;  /* azul principal */
+  color: #2471a3;
+  margin: 15px 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+}
+
+.alerta, .aviso {
+  background: #fffbe6;
+  border-left: 4px solid #ffc107;  /* amarelo alerta */
+  color: #b38400;
+  margin: 15px 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+}
+
+.erro {
+  background: #fdecea;
+  border-left: 4px solid #dc3545; /* vermelho erro */
+  color: #dc3545;
+  margin: 15px 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+}
+
+/* === UTILIDADES === */
+.hidden {
+  display: none;
+}
