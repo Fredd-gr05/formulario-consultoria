@@ -17,11 +17,11 @@
           "label": "Segmento",
           "tipo": "select",
           "opcoes": [
-            { "id": "industria", "label": "Indústria" },
-            { "id": "varejo", "label": "Varejo" },
-            { "id": "distribuicao", "label": "Distribuição" },
-            { "id": "servicos", "label": "Serviços" },
-            { "id": "outros", "label": "Outros" }
+            { "id": "industria",   "label": "Indústria" },
+            { "id": "varejo",      "label": "Varejo" },
+            { "id": "distribuicao","label": "Distribuição" },
+            { "id": "servicos",    "label": "Serviços" },
+            { "id": "outros",      "label": "Outros" }
           ],
           "obrigatorio": true,
           "dica": "Escolha o segmento que melhor representa sua empresa.",
@@ -42,10 +42,10 @@
           "label": "Porte da empresa",
           "tipo": "select",
           "opcoes": [
-            { "id": "micro", "label": "Microempresa (até 9 colaboradores)" },
+            { "id": "micro",   "label": "Microempresa (até 9 colaboradores)" },
             { "id": "pequeno", "label": "Pequeno porte (10 a 49)" },
-            { "id": "medio", "label": "Médio porte (50 a 249)" },
-            { "id": "grande", "label": "Grande porte (250+)" }
+            { "id": "medio",   "label": "Médio porte (50 a 249)" },
+            { "id": "grande",  "label": "Grande porte (250+)" }
           ],
           "obrigatorio": true
         },
@@ -60,9 +60,15 @@
           "label": "Estado",
           "tipo": "select",
           "opcoes": [
-            "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT",
-            "MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS",
-            "RO","RR","SC","SP","SE","TO"
+            { "id":"AC", "label":"AC" }, { "id":"AL","label":"AL" }, { "id":"AP","label":"AP" },
+            { "id":"AM","label":"AM" }, { "id":"BA","label":"BA" }, { "id":"CE","label":"CE" },
+            { "id":"DF","label":"DF" }, { "id":"ES","label":"ES" }, { "id":"GO","label":"GO" },
+            { "id":"MA","label":"MA" }, { "id":"MT","label":"MT" }, { "id":"MS","label":"MS" },
+            { "id":"MG","label":"MG" }, { "id":"PA","label":"PA" }, { "id":"PB","label":"PB" },
+            { "id":"PR","label":"PR" }, { "id":"PE","label":"PE" }, { "id":"PI","label":"PI" },
+            { "id":"RJ","label":"RJ" }, { "id":"RN","label":"RN" }, { "id":"RS","label":"RS" },
+            { "id":"RO","label":"RO" }, { "id":"RR","label":"RR" }, { "id":"SC","label":"SC" },
+            { "id":"SP","label":"SP" }, { "id":"SE","label":"SE" }, { "id":"TO","label":"TO" }
           ],
           "obrigatorio": true
         },
@@ -103,100 +109,21 @@
             { "id": "google_data_studio", "label": "Google Data Studio" },
             { "id": "outros", "label": "Outros" }
           ],
-          "obrigatorio": false,
-          "condicional": { "campo": "usa_bi", "valor": "sim" }
+          "obrigatorio": false
         },
         {
-          "id": "tecnologias_bi_outras",
-          "label": "Quais?",
+          "id": "tecnologias_bi_outros",
+          "label": "Se outros, quais?",
           "tipo": "text",
           "obrigatorio": true,
           "condicional": { "campo": "tecnologias_bi", "valor": "outros" }
         },
         {
-          "id": "tipos_dados_tratados",
-          "label": "Que tipos de dados são tratados atualmente?",
-          "tipo": "checkbox",
-          "opcoes": [
-            { "id": "vendas", "label": "Vendas" },
-            { "id": "financeiro", "label": "Financeiro" },
-            { "id": "estoque", "label": "Estoque" },
-            { "id": "producao", "label": "Produção" },
-            { "id": "clientes", "label": "Clientes" },
-            { "id": "fornecedores", "label": "Fornecedores" },
-            { "id": "outros", "label": "Outros" }
-          ],
-          "obrigatorio": false
-        },
-        {
-          "id": "tipos_dados_outros",
-          "label": "Outros tipos de dados tratados",
-          "tipo": "text",
-          "obrigatorio": true,
-          "condicional": { "campo": "tipos_dados_tratados", "valor": "outros" }
-        },
-        {
-          "id": "maturidade_bi",
-          "label": "Como avalia a maturidade de BI na empresa?",
-          "tipo": "select",
-          "opcoes": [
-            { "id": "nenhum", "label": "Nenhuma estrutura de BI" },
-            { "id": "inicial", "label": "Iniciando processos de BI" },
-            { "id": "parcial", "label": "Uso parcial e pontual de BI" },
-            { "id": "avancado", "label": "Estrutura de BI consolidada" }
-          ],
-          "obrigatorio": true
-        }
-      ]
-    },
-
-    {
-      "id": "dificuldades",
-      "titulo": "Principais Dificuldades Enfrentadas",
-      "descricao": "Identifique os desafios que dificultam a evolução dos dados e BI na empresa.",
-      "campos": [
-        {
-          "id": "dificuldades_lista",
-          "label": "Quais dessas dificuldades a empresa enfrenta?",
-          "tipo": "checkbox",
-          "opcoes": [
-            { "id": "qualidade_dados", "label": "Falta de qualidade/confiança nos dados" },
-            { "id": "falta_tempo", "label": "Falta de tempo dos responsáveis" },
-            { "id": "baixo_conhecimento_bi", "label": "Baixo conhecimento sobre BI" },
-            { "id": "resistencia_mudanca", "label": "Resistência à mudança da equipe" },
-            { "id": "dificuldade_integracao", "label": "Dificuldade para integrar sistemas/dados" },
-            { "id": "dados_desatualizados", "label": "Dados desatualizados" },
-            { "id": "baixa_aderencia", "label": "Baixa aderência aos processos de BI" },
-            { "id": "pouco_investimento", "label": "Pouco investimento em tecnologia" },
-            { "id": "outros", "label": "Outros (especificar abaixo)" }
-          ],
-          "obrigatorio": true,
-          "mensagem_validacao": "Selecione pelo menos uma dificuldade."
-        },
-        {
-          "id": "dificuldades_outros",
-          "label": "Descreva outras dificuldades",
-          "tipo": "textarea",
-          "obrigatorio": true,
-          "condicional": { "campo": "dificuldades_lista", "valor": "outros" }
-        }
-      ]
-    },
-
-    {
-      "id": "objetivos_bi",
-      "titulo": "Objetivos com Business Intelligence",
-      "descricao": "O que você espera alcançar ao implementar uma solução de Business Intelligence?",
-      "campos": [
-        {
           "id": "objetivos_bi_lista",
-          "label": "Selecione os objetivos do projeto de BI",
+          "label": "Principais objetivos com BI",
           "tipo": "checkbox",
           "opcoes": [
-            { "id": "aumentar_vendas", "label": "📈 Aumentar vendas e receita" },
-            { "id": "reduzir_custos", "label": "💰 Reduzir custos e despesas" },
-            { "id": "otimizar_processos", "label": "⚙️ Otimizar processos internos" },
-            { "id": "melhorar_decisao", "label": "🧠 Melhorar a tomada de decisão" },
+            { "id": "decisao", "label": "🧠 Melhorar a tomada de decisão" },
             { "id": "novas_oportunidades", "label": "🔍 Identificar novas oportunidades de mercado" },
             { "id": "acompanhar_kpis", "label": "📊 Acompanhar performance de KPIs em tempo real" },
             { "id": "satisfacao_cliente", "label": "❤️ Melhorar a satisfação/ retenção dos clientes" },
